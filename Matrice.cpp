@@ -9,6 +9,7 @@ void Matrice::transpusa()
 {
 	//theta(N)
 	//N-numarul de elemente din matrice
+	//se memoreaza in m transpusa matricei 
 	Matrice m(numarColoane,numarLinii);
 	for (int i = 0;i <numarColoane;i++)
 	{
@@ -30,6 +31,7 @@ void Matrice::transpusa()
 }
 
 void Matrice::printm() {
+	//afisaza continutul vectorilor
 	linie.print();
 
 	coloana.print();
@@ -38,6 +40,7 @@ void Matrice::printm() {
 Matrice::Matrice(int numLinii, int numColoane) { 
 	// theta(n)
 	//n-numarul de coloane
+	//initializeaza continutul matricei
 	for (int i = 0;i < numColoane;i++)
 	{
 		coloana.adaugamax(i, -1);//theta(1)
@@ -50,14 +53,17 @@ Matrice::Matrice(int numLinii, int numColoane) {
 }
 
 int Matrice::nrLinii()const {
+	//returneaza numarul de linii
 	return numarLinii;
 }
 void Matrice::resize_matrice()
 {
+	//redimensioneaza vectorii
 	valoare.resizesterge();
 	linie.resizesterge();
 }
 int Matrice::nrColoane()const {
+	//returneaza numarul de coloane
 	return numarColoane;
 }
 
@@ -65,6 +71,7 @@ int Matrice::nrColoane()const {
 TElem Matrice::element(int i, int j)const {
 	// theta(n)
 	//n-numarul de coloane
+	//returneaza elementul de pe pozitia i si j din matrice
 	try {
 
 		int ok = 0;
@@ -96,6 +103,7 @@ TElem Matrice::element(int i, int j)const {
 TElem Matrice::modifica(int i, int j, TElem e) {
 	//O(n)
 	//n-numarul de coloane
+	//modifica elementul de pe pozitia i si j din matrice, daca acasta exista in caz contrar il adauga
 	int p;
 	try {
 
